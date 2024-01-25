@@ -6,9 +6,17 @@ CPUs with comparable features, taking inspiration from AWS' analysis of
 benchmarking used a 2012 short [_Tears of Steel_][2] by the Blender
 Foundation, using both x264 and x265 encoders against an FFmpeg
 development build optimised for Neoverse chips. To begin replicating
-the AWS tests, the initial script, `batch-1080p.sh` uses all available
+the AWS tests, the initial script `batch-1080p.sh` uses all available
 threads to re-encode 1,000 frames from the 4K version of the film at
 1080p with FFmpeg's slow preset.
+
+To use, first install FFmpeg and cURL and then try the following:
+```shell
+git clone https://github.com/elisehaldane/batch-ffmpeg
+cd batch-ffmpeg
+chmod 755 ./batch-1080p.sh
+./batch-1080p.sh
+```
 
 <!-- Links -->
 [1]: https://aws.amazon.com/blogs/opensource/optimized-video-encoding-with-ffmpeg-on-aws-graviton-processors/
